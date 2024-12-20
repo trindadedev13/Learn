@@ -25,7 +25,7 @@ public class MainActivity : AppCompatActivity() {
     scale = Scale(context = this, state = scaleState)
   }
   
-  public fun onTouchEvent(event: MotionEvent): Boolean {
+  override fun onTouchEvent(event: MotionEvent): Boolean {
     scale.onTouchEvent(event)
     return true
   }
