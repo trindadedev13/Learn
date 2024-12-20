@@ -17,9 +17,7 @@ class DragLayoutEvents(
 
   fun onUp(view: View, event: MotionEvent) {
     val parent = view.parent as ViewGroup
-    val centerX = (parent.width - view.width) / 2f
-    val centerY = (parent.height - view.height) / 2f
-
+    
     val elasticInterpolator = OvershootInterpolator(1.5f)
 
     val goBackXAnimator = ObjectAnimator.ofFloat(view, "x", view.x, state.originalX)
