@@ -17,11 +17,16 @@ constructor(
   init {
     setOnTouchListener { view, event ->
       when (event.action) {
-        MotionEvent.ACTION_DOWN -> onDown(view, event)
-        MotionEvent.ACTION_MOVE -> onMove(view, event)
-        else -> false
+        MotionEvent.ACTION_DOWN -> {
+          onDown(view, event)
+          return@setOnTouchListener true
+        }
+        MotionEvent.ACTION_MOVE -> {
+            onMove(view, event)
+            return@setOnTouchListener true
+        }
+        else -> return@setOnTouchListener false
       }
-      return true
     }
   }
   
