@@ -1,6 +1,7 @@
 package dev.trindadedev.anims.ui.activities
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import dev.trindadedev.anims.databinding.ActivityMainBinding
 
@@ -11,6 +12,7 @@ public class MainActivity : AppCompatActivity() {
     get() = checkNotNull(_binding) { "Activity has been destroyed" }
   
   override fun onCreate(savedInstanceState: Bundle?) {
+    enableEdgeToEdge()
     super.onCreate(savedInstanceState)
     _binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
