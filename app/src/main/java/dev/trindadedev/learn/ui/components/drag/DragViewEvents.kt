@@ -10,17 +10,34 @@ class DragViewEvents(
   private val context: Context,
   private val state: DragViewState = DragViewState()
 ) {
-  
+
   fun onUp(view: View, event: MotionEvent) {
-    //todo
+    val parent = view.parent as ViewGroup
+    val centerX = (parent.width - view.width) / 2f
+    val centerY = (parent.height - view.height) / 2f
+
+    view.animate()
+      .x(centerX)
+      .y(centerY)
+      .setDuration(300)
+      .withEndAction {
+        view.animate()
+          .x(0f)
+          .y(0f)
+          .width(parent.width)
+          .height(parent.height)
+          .setDuration(300)
+          .start()
+      }
+      .start()
   }
-  
+
   fun onDown(view: View, event: MotionEvent) {
-    state.dX = view.getX() - event.getRawX()
-    state.dY = view.getY() - event.getRawY()
+    state.dX = view.x - event.rawX
+    state.dY = view.y - event.rawY
     context.vibrate(100)
   }
-  
+
   fun onMove(view: View, event: MotionEvent) {
     val parent = view.parent as ViewGroup
     val newX = (event.rawX + state.dX).coerceIn(0f, parent.width - view.width.toFloat())
