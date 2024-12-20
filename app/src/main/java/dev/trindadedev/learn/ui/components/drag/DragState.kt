@@ -1,4 +1,4 @@
-package dev.trindadedev.anims.ui.components.drag
+package dev.trindadedev.learn.ui.components.drag
 
 data class DragState(
   var dY: Float = 0f,

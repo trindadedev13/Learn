@@ -1,4 +1,4 @@
-package dev.trindadedev.anims.ui.components.drag
+package dev.trindadedev.learn.ui.components.drag
 
 import android.content.Context
 import android.util.AttributeSet

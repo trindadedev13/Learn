@@ -1,4 +1,4 @@
-package dev.trindadedev.anims
+package dev.trindadedev.learn
 
 import android.app.Application
 import com.google.android.material.color.DynamicColors

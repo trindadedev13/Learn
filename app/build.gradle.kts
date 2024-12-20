@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-  namespace = "dev.trindadedev.anims"
+  namespace = "dev.trindadedev.learn"
   compileSdk = 34
     
   defaultConfig {
-    applicationId = "dev.trindadedev.anims"
+    applicationId = "dev.trindadedev.learn"
     minSdk = 21
     targetSdk = 34
     versionCode = 1
