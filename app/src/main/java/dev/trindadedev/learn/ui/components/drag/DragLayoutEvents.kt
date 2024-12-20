@@ -28,8 +28,8 @@ class DragLayoutEvents(
     goBackXAnimator.interpolator = elasticInterpolator
     goBackYAnimator.interpolator = elasticInterpolator
 
-    goBackXAnimator.duration = 500
-    goBackYAnimator.duration = 500
+    goBackXAnimator.duration = state.onUp.goBackXAnimDuration
+    goBackYAnimator.duration = state.onUp.goBackYAnimDuration
 
     goBackXAnimator.start()
     goBackYAnimator.start()
