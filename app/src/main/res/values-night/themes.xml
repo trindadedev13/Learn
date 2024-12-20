@@ -1,5 +1,3 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <style
-    name="Base.AppTheme"
-    parent="Theme.Material3.DynamicColors.Dark.NoActionBar" />
+  <style name="Base.AppTheme" parent="Theme.Material3.DynamicColors.Dark.NoActionBar" />
 </resources>
