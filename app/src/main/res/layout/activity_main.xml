@@ -7,7 +7,7 @@
   android:padding="8dp"
   android:gravity="center">
   <dev.trindadedev.learn.ui.components.drag.DragView
-    android:id="@+id/drag_view1"
+    android:id="@+id/drag_view"
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:background="@drawable/drag_shape" />

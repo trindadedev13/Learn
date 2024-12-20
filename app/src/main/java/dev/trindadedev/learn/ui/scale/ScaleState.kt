@@ -1,4 +1,4 @@
-package dev.trindadedev.learn.ui.activities
+package dev.trindadedev.learn.ui.scale
 
 import android.view.View
 

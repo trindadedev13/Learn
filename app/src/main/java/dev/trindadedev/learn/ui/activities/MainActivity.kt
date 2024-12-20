@@ -5,6 +5,8 @@ import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import dev.trindadedev.learn.databinding.ActivityMainBinding
+import dev.trindadedev.learn.ui.scale.Scale
+import dev.trindadedev.learn.ui.scale.ScaleState
 
 public class MainActivity : AppCompatActivity() {
   
