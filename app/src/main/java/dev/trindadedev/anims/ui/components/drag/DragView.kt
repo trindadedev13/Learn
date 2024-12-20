@@ -15,7 +15,7 @@ constructor(
   var state = DragState()
   
   init {
-    setTouchListener { view, event ->
+    setOnTouchListener { view, event ->
       when (event.action) {
         MotionEvent.ACTION_DOWN -> onDown(view, event)
         MotionEvent.ACTION_MOVE -> onMove(view, event)
