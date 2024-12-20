@@ -1,5 +1,7 @@
 package dev.trindadedev.learn.ui.components.drag
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.content.Context
 import android.animation.ObjectAnimator
 import android.view.MotionEvent
@@ -32,8 +34,8 @@ class DragViewEvents(
     centerXAnimator.start()
     centerYAnimator.start()
 
-    centerXAnimator.addListener(object : android.animation.AnimatorListenerAdapter() {
-      override fun onAnimationEnd(animation: android.animation.Animator?) {
+    centerXAnimator.addListener(object : AnimatorListenerAdapter() {
+      override fun onAnimationEnd(animator: Animator) {
         val widthAnimator = ObjectAnimator.ofInt(view, "width", view.width, parent.width)
         val heightAnimator = ObjectAnimator.ofInt(view, "height", view.height, parent.height)
 
