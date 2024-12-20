@@ -5,8 +5,8 @@
   android:layout_height="match_parent"
   android:orientation="vertical"
   android:padding="8dp">
-  <dev.trindadedev.learn.ui.components.drag.DragView
-    android:id="@+id/drag_view"
+  <dev.trindadedev.learn.ui.components.drag.DragLayout
+    android:id="@+id/drag_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true">
@@ -14,5 +14,5 @@
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:background="@drawable/drag_shape" />
-  </dev.trindadedev.learn.ui.components.drag.DragView>
+  </dev.trindadedev.learn.ui.components.drag.DragLayout>
 </RelativeLayout>

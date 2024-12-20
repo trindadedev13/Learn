@@ -5,13 +5,13 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.ViewGroup
 
-class DragView @JvmOverloads
+class DragLayout @JvmOverloads
 constructor(
   context: Context,
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
 ) : ViewGroup(context, attrs, defStyleAttr) {
-  var events = DragViewEvents(context)
+  var events = DragLayoutEvents(context)
 
   init {
     setOnTouchListener { view, event ->

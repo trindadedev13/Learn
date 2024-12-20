@@ -10,9 +10,9 @@ import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
 import dev.trindadedev.learn.utils.vibrate
 
-class DragViewEvents(
+class DragLayoutEvents(
   private val context: Context,
-  private val state: DragViewState = DragViewState()
+  private val state: DragLayoutState = DragLayoutState()
 ) {
 
   fun onUp(view: View, event: MotionEvent) {
@@ -54,7 +54,6 @@ class DragViewEvents(
   fun onDown(view: View, event: MotionEvent) {
     state.dX = view.x - event.rawX
     state.dY = view.y - event.rawY
-    
   }
 
   fun onMove(view: View, event: MotionEvent) {
