@@ -21,11 +21,10 @@ class DragViewEvents(
       .y(centerY)
       .setDuration(300)
       .withEndAction {
+        view.layout(0, 0, parent.width, parent.height)
         view.animate()
           .x(0f)
           .y(0f)
-          .width(parent.width)
-          .height(parent.height)
           .setDuration(300)
           .start()
       }
