@@ -19,7 +19,6 @@ constructor(
         MotionEvent.ACTION_UP -> events.onUp(view, event)
         MotionEvent.ACTION_DOWN -> events.onDown(view, event)
         MotionEvent.ACTION_MOVE -> events.onMove(view, event)
-        else -> false
       }
       true
     }
