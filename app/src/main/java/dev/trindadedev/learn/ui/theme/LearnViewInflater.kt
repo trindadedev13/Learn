@@ -3,7 +3,8 @@ package dev.trindadedev.learn.ui.theme
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import android.widget.Switch
+
+import androidx.appcompat.widget.SwitchCompat;
 
 import dev.trindadedev.learn.ui.components.drag.DragView
 
@@ -26,11 +27,11 @@ class LearnViewInflater: MaterialComponentsViewInflater() {
     }
   }
   
-  protected fun createDragView(context: Context, attrs: AttributeSet): DragView {
-    return DragView(context, attrs)
+  protected fun createSwitch(context: Context, attrs: AttributeSet): SwitchCompat {
+    return MaterialSwitch(context, attrs)
   }
   
-  protected fun createSwitch(context: Context, attrs: AttributeSet): Switch {
-    return MaterialSwitch(context, attrs)
+  protected fun createDragView(context: Context, attrs: AttributeSet): DragView {
+    return DragView(context, attrs)
   }
 }
