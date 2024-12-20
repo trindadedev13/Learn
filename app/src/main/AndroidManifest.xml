@@ -9,7 +9,7 @@
     android:theme="@style/AppTheme"
     android:name="dev.trindadedev.anims.AnimsApp">
     <activity
-      android:name="dev.trindadedev.anims.ui.activities"
+      android:name="dev.trindadedev.anims.ui.activities.MainActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
