@@ -7,10 +7,10 @@ data class DragLayoutState(
   var onMove: OnMove = OnMove()
 ) {
   data class OnUp(
-    var heightAnimDuration: Int = 0,
-    var widthAnimDuration: Int = 0,
-    var goBackXAnimDuration: Int = 0,
-    var goBackYAnimDuration: Int = 0,
+    var heightAnimDuration: Long = 0,
+    var widthAnimDuration: Long = 0,
+    var goBackXAnimDuration: Long = 0,
+    var goBackYAnimDuration: Long = 0,
   )
   data class OnMove(
     var dY: Float = 0f,
