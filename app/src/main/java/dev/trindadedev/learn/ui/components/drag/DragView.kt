@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import dev.trindadedev.learn.utils.vibrate
 
 class DragView @JvmOverloads 
 constructor(
@@ -33,6 +34,7 @@ constructor(
   private fun onDown(view: View, event: MotionEvent) {
     state.dX = view.getX() - event.getRawX()
     state.dY = view.getY() - event.getRawY()
+    context.vibrate(100)
   }
   
   private fun onMove(view: View, event: MotionEvent) {
