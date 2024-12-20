@@ -8,7 +8,7 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity
-      android:name="MainActivity"
+      android:name="dev.trindadedev.anims.ui.activities.MainActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package dev.trindadedev.anims
+package dev.trindadedev.anims.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
