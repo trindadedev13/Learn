@@ -47,9 +47,6 @@ class DragViewEvents(
 
         widthAnimator.start()
         heightAnimator.start()
-
-        ObjectAnimator.ofFloat(view, "x", 0f).apply { duration = 500 }.start()
-        ObjectAnimator.ofFloat(view, "y", 0f).apply { duration = 500 }.start()
       }
     })
   }
