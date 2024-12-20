@@ -1,11 +1,13 @@
 package dev.trindadedev.learn.ui.components.drag
 
 import android.content.Context
+import android.view.MotionEvent
+import android.view.View
 import android.view.ViewGroup
 import dev.trindadedev.learn.utils.vibrate
 
 class DragViewEvents(
-  private val context: Context
+  private val context: Context,
   private val state: DragViewState = DragViewState()
 ) {
   
