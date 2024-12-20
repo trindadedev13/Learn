@@ -22,19 +22,19 @@ class DragLayoutEvents(
 
     val elasticInterpolator = OvershootInterpolator(1.5f)
 
-    val centerXAnimator = ObjectAnimator.ofFloat(view, "x", view.x, centerX)
-    val centerYAnimator = ObjectAnimator.ofFloat(view, "y", view.y, centerY)
+    val goBackXAnimator = ObjectAnimator.ofFloat(view, "x", view.x, state.originalX)
+    val goBackYAnimator = ObjectAnimator.ofFloat(view, "y", view.y, state.originalY)
 
-    centerXAnimator.interpolator = elasticInterpolator
-    centerYAnimator.interpolator = elasticInterpolator
+    goBackXAnimator.interpolator = elasticInterpolator
+    goBackYAnimator.interpolator = elasticInterpolator
 
-    centerXAnimator.duration = 500
-    centerYAnimator.duration = 500
+    goBackXAnimator.duration = 500
+    goBackYAnimator.duration = 500
 
-    centerXAnimator.start()
-    centerYAnimator.start()
+    goBackXAnimator.start()
+    goBackYAnimator.start()
 
-    centerXAnimator.addListener(object : AnimatorListenerAdapter() {
+    goBackXAnimator.addListener(object : AnimatorListenerAdapter() {
       override fun onAnimationEnd(animator: Animator) {
         val widthAnimator = ObjectAnimator.ofInt(view, "width", view.width, parent.width)
         val heightAnimator = ObjectAnimator.ofInt(view, "height", view.height, parent.height)
@@ -42,8 +42,8 @@ class DragLayoutEvents(
         widthAnimator.interpolator = elasticInterpolator
         heightAnimator.interpolator = elasticInterpolator
 
-        widthAnimator.duration = 500
-        heightAnimator.duration = 500
+        widthAnimator.duration = state.onUp.widthAnimDuration
+        heightAnimator.duration = state.onUp.heightAnimDuration
 
         widthAnimator.start()
         heightAnimator.start()
@@ -52,19 +52,21 @@ class DragLayoutEvents(
   }
 
   fun onDown(view: View, event: MotionEvent) {
-    state.dX = view.x - event.rawX
-    state.dY = view.y - event.rawY
+    state.originalY = view.y
+    state.originalX = view.x
+    state.onMove.dX = view.x - event.rawX
+    state.onMove.dY = view.y - event.rawY
   }
 
   fun onMove(view: View, event: MotionEvent) {
     val parent = view.parent as ViewGroup
-    val newX = (event.rawX + state.dX).coerceIn(0f, parent.width - view.width.toFloat())
-    val newY = (event.rawY + state.dY).coerceIn(0f, parent.height - view.height.toFloat())
+    val newX = (event.rawX + state.onMove.dX).coerceIn(0f, parent.width - view.width.toFloat())
+    val newY = (event.rawY + state.onMove.dY).coerceIn(0f, parent.height - view.height.toFloat())
 
     view.animate()
       .x(newX)
       .y(newY)
-      .setDuration(state.duration)
+      .setDuration(state.onMove.animDuration)
       .start()
   }
 }
