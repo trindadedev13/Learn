@@ -1,18 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="vertical">
-  
-  <Switch
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:text="switch" />
-
+  android:orientation="vertical"
+  android:padding="8dp"
+  android:gravity="center_horizontal|bottom">
   <dev.trindadedev.learn.ui.components.drag.DragView
+    android:id="@+id/drag_view1"
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:background="@drawable/drag_shape" />
-
 </LinearLayout>

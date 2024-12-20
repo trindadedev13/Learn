@@ -1,9 +1,11 @@
 package dev.trindadedev.learn.ui.components.drag
 
 import android.content.Context
+import android.animation.ObjectAnimator
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.OvershootInterpolator
 import dev.trindadedev.learn.utils.vibrate
 
 class DragViewEvents(
@@ -16,19 +18,38 @@ class DragViewEvents(
     val centerX = (parent.width - view.width) / 2f
     val centerY = (parent.height - view.height) / 2f
 
-    view.animate()
-      .x(centerX)
-      .y(centerY)
-      .setDuration(300)
-      .withEndAction {
-        view.layout(0, 0, parent.width, parent.height)
-        view.animate()
-          .x(0f)
-          .y(0f)
-          .setDuration(300)
-          .start()
+    val elasticInterpolator = OvershootInterpolator(1.5f)
+
+    val centerXAnimator = ObjectAnimator.ofFloat(view, "x", view.x, centerX)
+    val centerYAnimator = ObjectAnimator.ofFloat(view, "y", view.y, centerY)
+
+    centerXAnimator.interpolator = elasticInterpolator
+    centerYAnimator.interpolator = elasticInterpolator
+
+    centerXAnimator.duration = 500
+    centerYAnimator.duration = 500
+
+    centerXAnimator.start()
+    centerYAnimator.start()
+
+    centerXAnimator.addListener(object : android.animation.AnimatorListenerAdapter() {
+      override fun onAnimationEnd(animation: android.animation.Animator?) {
+        val widthAnimator = ObjectAnimator.ofInt(view, "width", view.width, parent.width)
+        val heightAnimator = ObjectAnimator.ofInt(view, "height", view.height, parent.height)
+
+        widthAnimator.interpolator = elasticInterpolator
+        heightAnimator.interpolator = elasticInterpolator
+
+        widthAnimator.duration = 500
+        heightAnimator.duration = 500
+
+        widthAnimator.start()
+        heightAnimator.start()
+
+        ObjectAnimator.ofFloat(view, "x", 0f).apply { duration = 500 }.start()
+        ObjectAnimator.ofFloat(view, "y", 0f).apply { duration = 500 }.start()
       }
-      .start()
+    })
   }
 
   fun onDown(view: View, event: MotionEvent) {
