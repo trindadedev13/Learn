@@ -54,7 +54,7 @@ class DragViewEvents(
   fun onDown(view: View, event: MotionEvent) {
     state.dX = view.x - event.rawX
     state.dY = view.y - event.rawY
-    context.vibrate(100)
+    
   }
 
   fun onMove(view: View, event: MotionEvent) {
