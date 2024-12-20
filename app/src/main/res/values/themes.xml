@@ -1,6 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
   <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar" />
-  <style name="AppTheme" parent="Base.AppTheme" >
-    <item name="viewInflaterClass">dev.trindadedev.learn.ui.theme.LearnViewInflater</item>
-  </style>
+  <style name="AppTheme" parent="Base.AppTheme" />
 </resources>

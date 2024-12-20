@@ -21,7 +21,7 @@ public class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     _binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-    val scaleState = ScaleState(view = binding.dragView)
+    val scaleState = ScaleState(view = binding.dragLayout)
     scale = Scale(context = this, state = scaleState)
   }
   
