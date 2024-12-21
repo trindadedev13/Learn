@@ -13,5 +13,9 @@ data class DragLayoutState(
     var goBackYAnimDuration: Long = 500,
   )
 
-  data class OnMove(var dY: Float = 0f, var dX: Float = 0f, var animDuration: Long = 0)
+  data class OnMove(
+    var dY: Float = 0f,
+    var dX: Float = 0f,
+    var animDuration: Long = 0
+  )
 }

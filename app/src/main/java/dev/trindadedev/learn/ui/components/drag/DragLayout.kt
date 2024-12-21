@@ -8,8 +8,11 @@ import android.view.ViewGroup
 
 class DragLayout
 @JvmOverloads
-constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
-  ViewGroup(context, attrs, defStyleAttr) {
+constructor(
+  context: Context,
+  attrs: AttributeSet? = null,
+  defStyleAttr: Int = 0
+) : ViewGroup(context, attrs, defStyleAttr) {
   var events = DragLayoutEvents(context)
 
   init {
