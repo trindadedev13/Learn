@@ -7,7 +7,7 @@ import android.view.View
 import dev.trindadedev.learn.ui.components.Events
 
 class BounceLayoutEvents(
-  private val state: ElasticMoveableLayoutState = ElasticMoveableLayoutState(),
+  val state: BounceLayoutState = BounceLayoutState(),
 ): Events {
 
   override fun onUp(view: View, event: MotionEvent) {
