@@ -21,8 +21,20 @@ public class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     _binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-    val scaleState = ScaleState(view = binding.elasticMoveableLayout)
+    configureBounceLayout()
+  }
+  
+  private fun configureBounceLayout() {
+    val scaleState = ScaleState(view = binding.bounceLayout)
     scale = Scale(context = this, state = scaleState)
+    
+    binding.bounceLayout.events.state.initialBound = 100f 
+    binding.bounceLayout.events.state.targetBound = resources.displayMetrics.heightPixels.toFloat()
+    binding.bounceLayout.events.state.currentBound = binding.bounceLayout.events.state.initialBound
+    binding.bounceLayout.post {
+      binding.bounceLayout.layoutParams.height = binding.bounceLayout.events.state.initialBound.toInt()
+      binding.bounceLayout.requestLayout()
+    }
   }
 
   override fun onTouchEvent(event: MotionEvent): Boolean {

@@ -15,14 +15,6 @@ constructor(
   var events = BounceLayoutEvents()
 
   init {
-    events.state.initialBound = 100f 
-    events.state.targetBound = resources.displayMetrics.heightPixels.toFloat()
-    events.state.currentBound = events.state.initialBound
-    post {
-      layoutParams.height = events.state.initialBound.toInt()
-      requestLayout()
-    }
-    
     setOnTouchListener { view, event ->
       when (event.action) {
         MotionEvent.ACTION_UP -> events.onUp(view, event)

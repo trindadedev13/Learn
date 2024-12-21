@@ -6,13 +6,13 @@
   android:orientation="vertical"
   android:padding="12dp">
   <dev.trindadedev.learn.ui.components.bounce.BounceLayout
-    android:id="@+id/elastic_moveable_layout"
+    android:id="@+id/bounce_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true">
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="100dp"
-      android:background="@drawable/drag_shape" />
+      android:background="@drawable/tertiary_shape" />
   </dev.trindadedev.learn.ui.components.bounce.BounceLayout>
 </RelativeLayout>
