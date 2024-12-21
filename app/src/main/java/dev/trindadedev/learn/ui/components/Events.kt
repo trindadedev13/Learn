@@ -1,4 +1,4 @@
-package dev.trindadedev.ui.components
+package dev.trindadedev.learn.ui.components
 
 import android.view.MotionEvent
 import android.view.View
