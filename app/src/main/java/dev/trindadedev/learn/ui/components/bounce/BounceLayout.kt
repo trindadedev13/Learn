@@ -2,7 +2,7 @@ package dev.trindadedev.learn.ui.components.bounce
 
 import android.content.Context
 import android.util.AttributeSet
-import android.MotionEvent
+import android.view.MotionEvent
 import dev.trindadedev.learn.ui.components.base.BaseViewGroup
 
 class BounceLayout
@@ -12,7 +12,7 @@ constructor(
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
 ) : BaseViewGroup(context, attrs, defStyleAttr) {
-  var events = BounceLayoutEvents(context)
+  var events = BounceLayoutEvents()
 
   init {
     events.state.initialBound = 100f 
