@@ -3,18 +3,17 @@ package dev.trindadedev.learn.ui.components.elastic
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
-import android.content.Context
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
+import dev.trindadedev.learn.ui.components.Events
 
 class ElasticMoveableLayoutEvents(
-  private val context: Context,
   private val state: ElasticMoveableLayoutState = ElasticMoveableLayoutState(),
-) {
+): Events {
 
-  fun onUp(view: View, event: MotionEvent) {
+  override fun onUp(view: View, event: MotionEvent) {
     val parent = view.parent as ViewGroup
 
     val elasticInterpolator = OvershootInterpolator(1.5f)
@@ -50,14 +49,14 @@ class ElasticMoveableLayoutEvents(
     )
   }
 
-  fun onDown(view: View, event: MotionEvent) {
+  override fun onDown(view: View, event: MotionEvent) {
     state.originalY = view.y
     state.originalX = view.x
     state.onMove.dX = view.x - event.rawX
     state.onMove.dY = view.y - event.rawY
   }
 
-  fun onMove(view: View, event: MotionEvent) {
+  override fun onMove(view: View, event: MotionEvent) {
     val parent = view.parent as ViewGroup
     val newX = (event.rawX + state.onMove.dX).coerceIn(0f, parent.width - view.width.toFloat())
     val newY = (event.rawY + state.onMove.dY).coerceIn(0f, parent.height - view.height.toFloat())

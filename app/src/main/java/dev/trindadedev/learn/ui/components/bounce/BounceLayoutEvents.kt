@@ -8,7 +8,7 @@ import dev.trindadedev.learn.ui.components.Events
 
 class BounceLayoutEvents(
   private val state: ElasticMoveableLayoutState = ElasticMoveableLayoutState(),
-): Event {
+): Events {
 
   override fun onUp(view: View, event: MotionEvent) {
     val target = if (state.currentBound > (state.targetBound - state.initialBound) / 2) state.targetBound else state.initialBound
