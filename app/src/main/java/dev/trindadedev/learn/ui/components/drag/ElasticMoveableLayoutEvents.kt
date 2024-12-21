@@ -1,4 +1,4 @@
-package dev.trindadedev.learn.ui.components.drag
+package dev.trindadedev.learn.ui.components.elastic
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -9,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
 
-class DragLayoutEvents(
+class ElasticMoveableLayoutEvents(
   private val context: Context,
-  private val state: DragLayoutState = DragLayoutState(),
+  private val state: ElasticMoveableLayoutState = ElasticMoveableLayoutState(),
 ) {
 
   fun onUp(view: View, event: MotionEvent) {

@@ -1,32 +1,20 @@
-package dev.trindadedev.learn.ui.components.drag
+package dev.trindadedev.learn.ui.components.base
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 
-class DragLayout
+class BaseViewGroup
 @JvmOverloads
 constructor(
   context: Context,
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
 ) : ViewGroup(context, attrs, defStyleAttr) {
-  var events = DragLayoutEvents(context)
 
-  init {
-    setOnTouchListener { view, event ->
-      when (event.action) {
-        MotionEvent.ACTION_UP -> events.onUp(view, event)
-        MotionEvent.ACTION_DOWN -> events.onDown(view, event)
-        MotionEvent.ACTION_MOVE -> events.onMove(view, event)
-      }
-      true
-    }
-  }
-
-  fun getChilds(): List<View> {
+  /** make a for in chilcount, get child at position and add a list */
+  protected fun getChilds(): List<View> {
     val childs = mutableListOf<View>()
     for (pos in 0 until childCount) {
       childs.add(getChildAt(pos))

@@ -1,6 +1,6 @@
-package dev.trindadedev.learn.ui.components.drag
+package dev.trindadedev.learn.ui.components.elastic
 
-data class DragLayoutState(
+data class ElasticMoveableLayoutState(
   var originalY: Float = 0f,
   var originalX: Float = 0f,
   var onUp: OnUp = OnUp(),

@@ -14,14 +14,14 @@
     android:layout_alignParentBottom="true"
     android:clipToPadding="false"
     android:clipChildren="false">
-    <dev.trindadedev.learn.ui.components.drag.DragLayout
-      android:id="@+id/drag_layout"
+    <dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout
+      android:id="@+id/elastic_moveable_layout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/drag_shape" />
-    </dev.trindadedev.learn.ui.components.drag.DragLayout>
+    </dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout>
   </LinearLayout>
 </RelativeLayout>
