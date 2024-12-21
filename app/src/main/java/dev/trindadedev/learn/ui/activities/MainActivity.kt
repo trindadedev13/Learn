@@ -9,13 +9,13 @@ import dev.trindadedev.learn.ui.scale.Scale
 import dev.trindadedev.learn.ui.scale.ScaleState
 
 public class MainActivity : AppCompatActivity() {
-  
+
   private var _binding: ActivityMainBinding? = null
   private val binding: ActivityMainBinding
     get() = checkNotNull(_binding) { "Activity has been destroyed" }
-    
+
   private lateinit var scale: Scale
-  
+
   override fun onCreate(savedInstanceState: Bundle?) {
     enableEdgeToEdge()
     super.onCreate(savedInstanceState)
@@ -24,12 +24,12 @@ public class MainActivity : AppCompatActivity() {
     val scaleState = ScaleState(view = binding.dragLayout)
     scale = Scale(context = this, state = scaleState)
   }
-  
+
   override fun onTouchEvent(event: MotionEvent): Boolean {
     scale.onTouchEvent(event)
     return true
   }
-  
+
   override fun onDestroy() {
     super.onDestroy()
     _binding = null

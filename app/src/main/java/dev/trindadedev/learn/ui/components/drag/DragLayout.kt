@@ -6,12 +6,10 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 
-class DragLayout @JvmOverloads
-constructor(
-  context: Context,
-  attrs: AttributeSet? = null,
-  defStyleAttr: Int = 0
-) : ViewGroup(context, attrs, defStyleAttr) {
+class DragLayout
+@JvmOverloads
+constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
+  ViewGroup(context, attrs, defStyleAttr) {
   var events = DragLayoutEvents(context)
 
   init {
@@ -24,7 +22,7 @@ constructor(
       true
     }
   }
-  
+
   fun getChilds(): List<View> {
     val childs = mutableListOf<View>()
     for (pos in 0 until childCount) {
@@ -32,7 +30,7 @@ constructor(
     }
     return childs.toList()
   }
-  
+
   override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
     var left = 0
     var top = 0
@@ -42,7 +40,7 @@ constructor(
       if (child.visibility != View.GONE) {
         val width = child.measuredWidth
         val height = child.measuredHeight
-        
+
         child.layout(left, top, left + width, top + height)
         left += width
       }
