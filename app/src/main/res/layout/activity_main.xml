@@ -4,24 +4,15 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
-  android:padding="8dp"
-  android:clipToPadding="false"
-  android:clipChildren="false">
-  <LinearLayout
+  android:padding="12dp">
+  <dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout
+    android:id="@+id/elastic_moveable_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="12dp"
-    android:layout_alignParentBottom="true"
-    android:clipToPadding="false"
-    android:clipChildren="false">
-    <dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout
-      android:id="@+id/elastic_moveable_layout"
+    android:layout_alignParentBottom="true">
+    <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/drag_shape" />
-    </dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout>
-  </LinearLayout>
+      android:layout_height="100dp"
+      android:background="@drawable/drag_shape" />
+  </dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout>
 </RelativeLayout>
