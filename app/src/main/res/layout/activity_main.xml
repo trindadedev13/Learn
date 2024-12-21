@@ -5,7 +5,7 @@
   android:layout_height="match_parent"
   android:orientation="vertical"
   android:padding="12dp">
-  <dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout
+  <dev.trindadedev.learn.ui.components.bouce.BouceLayout
     android:id="@+id/elastic_moveable_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,5 +14,5 @@
       android:layout_width="match_parent"
       android:layout_height="100dp"
       android:background="@drawable/drag_shape" />
-  </dev.trindadedev.learn.ui.components.elastic.ElasticMoveableLayout>
+  </dev.trindadedev.learn.ui.components.bouce.BouceLayout>
 </RelativeLayout>
