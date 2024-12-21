@@ -12,7 +12,7 @@ constructor(
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
 ) : BaseViewGroup(context, attrs, defStyleAttr) {
-  var events = ElasticMoveableLayoutEvents(context)
+  var events = ElasticMoveableLayoutEvents()
 
   init {
     setOnTouchListener { view, event ->
