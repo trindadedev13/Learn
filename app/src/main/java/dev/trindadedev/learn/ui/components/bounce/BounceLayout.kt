@@ -18,8 +18,10 @@ constructor(
     events.state.initialBound = 100f 
     events.state.targetBound = resources.displayMetrics.heightPixels.toFloat()
     events.state.currentBound = events.state.initialBound
-    layoutParams.height = events.state.initialBound.toInt()
-    requestLayout()
+    post {
+      layoutParams.height = events.state.initialBound.toInt()
+      requestLayout()
+    }
     
     setOnTouchListener { view, event ->
       when (event.action) {
