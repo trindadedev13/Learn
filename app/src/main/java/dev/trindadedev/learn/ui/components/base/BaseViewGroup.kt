@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 
-class BaseViewGroup
+abstract class BaseViewGroup
 @JvmOverloads
 constructor(
   context: Context,
